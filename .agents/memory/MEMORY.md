@@ -1,0 +1,2 @@
+- [Express session test timing](express-session-test-timing.md) — consume the response body before assuming the store write completed.
+- [GitHub Actions workflow uploads](github-workflow-scope.md) — the current GitHub connector cannot write `.github/workflows/*`; ordinary repo write access is not enough.

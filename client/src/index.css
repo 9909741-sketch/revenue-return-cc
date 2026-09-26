@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+/* Переключение темы по классу .dark на <html> (docs/PASSPORT.md, блок 9 — светлая тема
+   с переключателем на тёмную), а не по системной настройке по умолчанию. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Палитра и токены темы — официальная брендовая палитра Laparet (docs/PASSPORT.md,
+   блок 9 и блок 14, пункт 7: рабочая палитра заменена на брендовую одной правкой здесь).
+   --color-brand-error и --color-brand-success — функциональные цвета статуса
+   (ошибка/успех), не часть брендовой палитры, не меняются при ребрендинге. */
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --color-brand-bg: #f0e8e2;
+  --color-brand-fg: #231e1e;
+  --color-brand-primary: #aa7d64;
+  --color-brand-accent: #c09978;
+  --color-brand-error: #d64550;
+  --color-brand-success: #2e7d32;
+}
+
+:root {
+  --page-bg: var(--color-brand-bg);
+  --page-fg: var(--color-brand-fg);
+  --surface-bg: #ffffff;
+  --surface-border: #d7c5c1;
+  --muted-fg: #8a7a73;
+}
+
+.dark {
+  --page-bg: #231e1e;
+  --page-fg: #f0e8e2;
+  --surface-bg: #2e2724;
+  --surface-border: #4a3d38;
+  --muted-fg: #c8b9b7;
+}
+
+body {
+  background-color: var(--page-bg);
+  color: var(--page-fg);
+  font-family: var(--font-sans);
+}
+
+/* Плотная табличная вёрстка — много данных на экран (docs/PASSPORT.md, блок 9). */
+.table-compact th,
+.table-compact td {
+  padding-top: 0.375rem;
+  padding-bottom: 0.375rem;
+}

@@ -1,0 +1,31 @@
+{
+  "name": "revenue-return-cc",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Возврат выручки контакт-центра — задачники «Отмены» и «Тёплые лиды» на общем ядре данных (компания «Баусервис», бренд Laparet).",
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "engines": {
+    "node": ">=22.0.0",
+    "npm": ">=10.0.0"
+  },
+  "scripts": {
+    "dev": "concurrently -n server,client -c blue,green \"npm run dev -w server\" \"npm run dev -w client\"",
+    "build": "npm run build -w client && npm run build -w server",
+    "start": "npm run start -w server",
+    "typecheck": "npm run typecheck -w server && npm run typecheck -w client"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  },
+  "dependencies": {
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.7",
+    "@types/connect-pg-simple": "^7.0.3",
+    "connect-pg-simple": "^10.0.0",
+    "jsdom": "^29.1.1",
+    "vitest": "^5.0.2"
+  }
+}
